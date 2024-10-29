@@ -3,13 +3,18 @@ import ProductInquiryForm, {
   formAction,
 } from "./components/ProductInquiryForm";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <ProductInquiryForm />,
+      action: formAction,
+    },
+  ],
   {
-    path: "/",
-    element: <ProductInquiryForm />,
-    action: formAction,
-  },
-]);
+    basename: "/FormComponent/",
+  }
+);
 const App = () => {
   return <RouterProvider router={router} />;
 };
